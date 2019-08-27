@@ -9,8 +9,7 @@ class ProfileContainer extends Component {
   };
 
   componentDidMount() {
-    const currentUser = localStorage.getItem('uid');
-    axios.get(`${API_URL}/users/${currentUser}`, {  headers: { authorization: `Bearer ${localStorage.uid}` }  })
+    axios.get(`${API_URL}/users`, {  headers: { authorization: `Bearer ${localStorage.uid}` }  })
       .then(res => {
         console.log(res)
         this.setState({ user: res.data.data });
