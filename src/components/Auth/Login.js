@@ -16,18 +16,7 @@ class Login extends Component {
   };
 
   handleSubmit = (event) => {
-    event.preventDefault();
-    const user = this.state;
-    axios.post(`${API_URL}/auth/login`, user)
-      .then(res => {
-        console.log(res);
-        this.props.setCurrentUser(res.data.signedJwt);
-        this.props.history.push('/profile');
-      })
-      .catch(err => {
-        // console.log(err.response);
-        this.setState({ error: err.response.data.message });
-      });
+    // handle submit here
   };
 
   render() {

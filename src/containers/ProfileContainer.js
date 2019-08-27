@@ -9,12 +9,7 @@ class ProfileContainer extends Component {
   };
 
   componentDidMount() {
-    axios.get(`${API_URL}/users`, {  headers: { authorization: `Bearer ${localStorage.uid}` }  })
-      .then(res => {
-        console.log(res)
-        this.setState({ user: res.data.data });
-      })
-      .catch(err => console.log(err));
+    // Axios call to get user information
   };
 
   render() {

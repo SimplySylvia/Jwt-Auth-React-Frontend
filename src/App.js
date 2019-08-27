@@ -7,18 +7,15 @@ import './App.css';
 
 class App extends Component {
   state = {
-    currentUser: localStorage.getItem('uid'),
+    currentUser:null, //set curent user from local storage token 
   };
 
   setCurrentUser = (token) => {
-    this.setState({ currentUser: token });
-    localStorage.setItem('uid', token);
+    // set user token
   };
 
   logout = () => {
-    localStorage.removeItem('uid');
-    this.setState({ currentUser: null });
-    this.props.history.push('/login');
+    // handle logout
   };
 
   render() {
